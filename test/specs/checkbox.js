@@ -44,12 +44,11 @@ describe("Handle CheckBox", function(){
     it("Check checkbox page url",async () =>{
         await browser.url('https://the-internet.herokuapp.com/')
         await InternetPage.clickOnLink(6)
-        await browser.pause(2000)
-        await console.log("Hello: ",await browser.getUrl())
-        await browser.pause(2000)
-
-        //await  assert.equal(await InternetPage.h3Header.getText(),"Checkboxes")
-        
+        await browser.pause(3000)
+        // await console.log("Hello: ",await browser.getUrl())
+        // await browser.pause(2000)
+       
+        await expect(browser).toHaveUrlContaining("checkboxes")
 
     })
 })
