@@ -15,10 +15,12 @@ describe("Handle CheckBox", function(){
     it("Check checkbox page header",async () =>{
         await browser.url('https://the-internet.herokuapp.com/')
         await InternetPage.clickOnLink(6)
+        await InternetPage.h3Header.waitForDisplayed()
+        await InternetPage.h3Header.getText()
         await browser.pause(2000)
-        
-        
-        await console.log("Title :  ", browser.getTitle())
+
+        await  assert.equal(await InternetPage.h3Header.getText(),"Checkboxes")
+        //await console.log("Title :  ", browser.getTitle())
 
     })
 
@@ -37,6 +39,17 @@ describe("Handle CheckBox", function(){
         await expect(InternetPage.getCheckBoxElement(1)).toBeSelected()
         //await assert.equal(await InternetPage.getCheckBoxElement(1).isSelected(),true)
         await browser.pause(2000)
+
+    })
+    it("Check checkbox page url",async () =>{
+        await browser.url('https://the-internet.herokuapp.com/')
+        await InternetPage.clickOnLink(6)
+        await browser.pause(2000)
+        await console.log("Hello: ",await browser.getUrl())
+        await browser.pause(2000)
+
+        //await  assert.equal(await InternetPage.h3Header.getText(),"Checkboxes")
+        
 
     })
 })
