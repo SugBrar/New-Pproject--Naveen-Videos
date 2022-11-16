@@ -2,7 +2,7 @@ const CRMPage = require("..//pageobjects/scrollToElement")
 
 describe("Scroll to View Element", () =>{
 
-    it("View Element and click", async () =>{
+    it.skip("View Element and click", async () =>{
 
         console.log("First method")
         browser.url("https://classic.crmpro.com/index.html")
